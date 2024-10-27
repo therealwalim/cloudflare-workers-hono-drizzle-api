@@ -1,0 +1,10 @@
+{
+    "out": "drizzle/migrations",
+    "schema": "src/db/schema.ts",
+    "dialect": "sqlite",
+    "generate": {
+        "migrations": {
+            "directory": "drizzle/migrations"
+        }
+    }
+}
