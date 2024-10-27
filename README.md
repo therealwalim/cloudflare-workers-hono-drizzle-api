@@ -5,7 +5,7 @@
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/honojs/cloudflare-workers-hono-drizzle-r2-d1-template.git
+git clone https://github.com/therealwalim/cloudflare-workers-hono-drizzle-api.git
 ```
 ```bash
 cd cloudflare-workers-hono-drizzle-r2-d1-template
