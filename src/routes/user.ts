@@ -1,11 +1,13 @@
-import { drizzle } from "drizzle-orm/d1";
 import { Hono } from "hono";
-import { users } from "../db/schema";
-import { eq, like, sql } from "drizzle-orm";
-import { Env } from "../types";
-import { deleteCookie, getCookie } from "hono/cookie";
+import { getCookie } from "hono/cookie";
 import { verify } from "hono/jwt";
+
+import { eq, like } from "drizzle-orm";
+import { drizzle } from "drizzle-orm/d1";
 import { v4 as uuidv4 } from "uuid";
+
+import { users } from "../db/schema";
+import { Env } from "../types";
 
 const user = new Hono<{ Bindings: Env }>();
 

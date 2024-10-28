@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("users", {
   id: integer("id").primaryKey(),
@@ -10,7 +10,7 @@ export const users = sqliteTable("users", {
   age: integer("age", { mode: "number" }).notNull(),
   position: text("position", { length: 50 }),
   password_changed_at: text("password_changed_at").default(
-    sql`CURRENT_TIMESTAMP`
+    sql`CURRENT_TIMESTAMP`,
   ),
   last_login_at: text("last_login")
     .default(sql`CURRENT_TIMESTAMP`)

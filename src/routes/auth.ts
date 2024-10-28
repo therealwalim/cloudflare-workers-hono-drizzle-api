@@ -1,12 +1,14 @@
-import { Hono } from "hono";
-import { genSaltSync, hashSync, compareSync } from "bcrypt-ts";
-import { sign as signJWT } from "hono/jwt";
-import { deleteCookie, setCookie } from "hono/cookie";
-import { drizzle } from "drizzle-orm/d1";
-import { Env } from "../types";
-import { users } from "../db/schema";
-import { eq, sql } from "drizzle-orm";
 import { zValidator } from "@hono/zod-validator";
+import { eq, sql } from "drizzle-orm";
+import { Hono } from "hono";
+import { deleteCookie, setCookie } from "hono/cookie";
+import { sign as signJWT } from "hono/jwt";
+
+import { drizzle } from "drizzle-orm/d1";
+import { compareSync, genSaltSync, hashSync } from "bcrypt-ts";
+
+import { users } from "../db/schema";
+import { Env } from "../types";
 import { userSchema } from "../validators/user";
 
 const app = new Hono<{ Bindings: Env }>();
